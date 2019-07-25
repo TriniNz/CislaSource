@@ -13,9 +13,11 @@
   "dependencies": {
     "canvas": "^2.5.0",
     "discord.js": "^11.5.1",
+    "express": "^4.17.1",
+    "express-glitch-keepalive": "^0.2.0",
+    "fs": "0.0.1-security",
     "lowdb": "^1.0.0",
     "node-superfetch": "^0.1.9",
-    "express": "^ 4.16.3",
     "request": "^2.88.0"
   }
 }
