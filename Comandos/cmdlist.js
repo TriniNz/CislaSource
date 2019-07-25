@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-exports.run = async (Discord, client, message, args) => {
+exports.run = async (Discord, client, message, args, db) => {
     
     fs.readdir("./comandos", function(err, files){
         const string = "'" + files + "'"

@@ -1,4 +1,4 @@
-exports.run = async (Discord, client, message, args) => {
+exports.run = async (Discord, client, message, args, db) => {
     if(!message.member.roles.some(r=>["Diretor","Administrador","Moderador","Ajudante","trini"].includes(r.name))) {
         let Embed_NoRoleRequire = new Discord.RichEmbed()
             .setDescription("Seu cargo não tem permissões para fazer isso.")

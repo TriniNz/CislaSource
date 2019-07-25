@@ -1,4 +1,4 @@
-exports.run = async (Discord, client, message, args) => {
+exports.run = async (Discord, client, message, args, db) => {
 
     var mensagem = " "
 
