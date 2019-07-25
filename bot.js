@@ -146,7 +146,7 @@ client.on("message", async message => {
 
     if(message.author.bot) return;
 
-    const args = message.content.slice(id.prefix).trim().split(/ +/g);
+    const args = message.content.slice(db.get("Guild").find({id: "602679739777417256"}).value().prefix).trim().split(/ +/g);
     const comando = args.shift().toLowerCase();
 
 
@@ -159,7 +159,7 @@ client.on("message", async message => {
             "tu sabe o que o pagodeiro foi fazer na igreja?\n \nRezar pá god."
 
                 ]
-    aleatorio = Math.floor(Math.random() * Textos.length)
+    let aleatorio = Math.floor(Math.random() * Textos.length)
 
         let random = Math.floor(Math.random()* (60 - 10)) + 10
 
@@ -189,9 +189,9 @@ client.on("message", async message => {
 
     if(message.channel.id !== "602871021204275223") {
 
-        if(message.content.toLowerCase().indexOf(`${db.get("Guild").find({id: message.guild.id}).value().prefix}`) == 0) {
+        if(message.content.toLowerCase().indexOf(db.get("Guild").find({id: "602679739777417256"}).value().prefix) == 0) {
 
-            let cmd = comando.split(`${db.get("Guild").find({id: message.guild.id}).value().prefix}`)
+            let cmd = comando.split(db.get("Guild").find({id: "602679739777417256"}).value().prefix)
         
             try {
 
