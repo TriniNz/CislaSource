@@ -3,6 +3,21 @@ const client = new Discord.Client()
 const id = require('./config.json')
 
 const Request = require('request')
+const express = require('express');
+const keepalive = require('express-glitch-keepalive');
+//npm i --save express express-glitch-keepalive
+
+const app = express();
+app.use(keepalive);
+app.get('/', (req, res) => {
+res.json('Este bot deve estar online! Uptimerobot vai mantê-lo vivo');
+});
+app.get("/", (request, response) => {
+response.sendStatus(200);
+});
+app.listen(process.env.PORT);
+
+
 
     const low = require('lowdb')
     const FileSync = require('lowdb/adapters/FileSync')
