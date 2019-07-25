@@ -1,4 +1,4 @@
-exports.run = async (Discord, client, message, args) => {
+exports.run = async (Discord, client, message, args, db) => {
 
     if(!message.member.roles.some(r=>["Diretor","Administrador","Moderador","Ajudante","trini"].includes(r.name))) {
         let Embed_NoRoleRequire = new Discord.RichEmbed()
@@ -11,11 +11,16 @@ exports.run = async (Discord, client, message, args) => {
     
     let userMute = message.mentions.members.first()
 
+    var time = Date().split(/ +/g);
+
+
     let reason = "Motivo não especificado."
     
     let MuteRole = message.guild.roles.find(r => r.name === "Mute")
 
     if(args[0]) {
+
+        let valor = db.get("Mutes").find({Usuario: `${userMute}`}).value()
 
         if(args[0].toLowerCase() === "aplicar") {
 
@@ -61,8 +66,17 @@ exports.run = async (Discord, client, message, args) => {
                     .setThumbnail(userMute.user.displayAvatarURL)
                     .setFooter("Usuario mutado com sucesso.")
                     .setTimestamp(new Date())
-                    .setColor("#6699FF")
-                userMute.addRole(MuteRole).then(message.guild.channels.get("602717447933657099").send(Embed_Muted))
+                    .setColor("#6699FF")                
+
+                    db.get("Mutes").push({
+                        Usuario: `${userMute}`,
+                        Id: `${userMute.user.id}`,
+                        Data: `${time[2]} de ${time[1]}, ${time[3]}, ás ${time[4]}`,
+                        Motivo: `${reason}`,
+                        Responsavel: `${message.author.id}`
+                    }).write()
+                    message.guild.channels.get("602717447933657099").send(Embed_Muted)
+                    userMute.addRole(MuteRole)
             }
 
 
@@ -83,7 +97,11 @@ exports.run = async (Discord, client, message, args) => {
                 .setFooter("Usuario desmutado com sucesso.")
                 .setTimestamp(new Date())
                 .setColor("#6699FF")
-            userMute.removeRole(MuteRole).then(message.guild.channels.get("602717447933657099").send(Embed_unMuted))
+            userMute.removeRole(MuteRole).then(unMute => {
+                message.guild.channels.get("602717447933657099").send(Embed_unMuted)
+                db.get("Mutes").remove({Usuario: `${userMute}`}).write()
+
+            })
         }
 
         } else if(args[0].toLowerCase() === "verificar") {
@@ -91,6 +109,7 @@ exports.run = async (Discord, client, message, args) => {
             if(message.guild.members.find(m => m.id === userMute.id).roles.find(r => r.name === "Mute")) {
                 let Embed_ConfirmMute = new Discord.RichEmbed()
                     .setDescription("Este usuario está mutado.")
+                    .addField("Informações:",`**Usuario**: ${valor.Usuario}\n**Data**: ${valor.Data}\n**Motivo**: ${valor.Motivo}\n**Responsavel**: <@${valor.Responsavel}>`)
                     .setTimestamp(new Date())
                     .setColor("#6699FF")
                 message.channel.send(Embed_ConfirmMute)
@@ -104,6 +123,7 @@ exports.run = async (Discord, client, message, args) => {
                 message.channel.send(Embed_ConfirmunMute)
             }
         } else {
+
             let Embed_Err_NoArgs = new Discord.RichEmbed()
                 .setAuthor("Argumento invalido.", message.author.displayAvatarURL)
                 .setDescription("Este argumento é invalido, aqui vai uma lista dos argumentos validos:\n • Aplicar - *Aplica a punição.*\n • Remover - *Remove a punição de um membro.*\n • Verificar - *Verifica se o membro está mutado.*\n ")

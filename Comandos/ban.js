@@ -1,4 +1,4 @@
-exports.run = async (Discord, client, message, args) => {
+exports.run = async (Discord, client, message, args, db) => {
 
     var time = Date().split(/ +/g);
 
@@ -35,5 +35,15 @@ exports.run = async (Discord, client, message, args) => {
         message.guild.channels.get("602717447933657099").send(Embed_Confirmado)
 
         message.reply("você baniu " + Usuario.user.username + ".").then(msg => msg.delete(15*1000))
+
+        db.get("Bans").push({
+            Usuario: `${Usuario}`,
+            Id: `${Usuario.user.id}`,
+            Data: `${time[2]} de ${time[1]}, ${time[3]}, ás ${time[4]}`,
+            Motivo: `${reason}`,
+            Responsavel: `${message.author.id}`
+        }).write()
+
+        await Usuario.ban(`Aplicado pelo: ${message.author.tag} | Motivo: ${reason} | Data: ${time[2]}/${time[3]} ás ${time[4]}`)
 
 }
