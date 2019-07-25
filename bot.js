@@ -50,7 +50,8 @@ var time = Date().split(/ +/g);
             `Jogar.Cisla.host.com`,
             `Meu prefixo é ${db.get("Guild").find({id: "602679739777417256"}).value().prefix}`,
             `Voce pode ver meus comandos utilizando ${db.get("Guild").find({id: "602679739777417256"}).value().prefix}cmdlist.`,
-            `Eu estou em fase beta! Pode haver muitos bugs.`
+            `Eu estou em fase beta! Pode haver muitos bugs.`,
+            `Eu sou Open-Source! Você pode ver meu codigo usando ${db.get("Guild").find({id: "602679739777417256"}).value().prefix}source`
         ]
         let aleatorio = Math.floor(Math.random() * stats.length)
         client.user.setPresence({ status: "idle", game: {name: `${stats[aleatorio]}`, type: "streaming", url: `https://www.twitch.tv/ztrininz_`}});
