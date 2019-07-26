@@ -22,7 +22,7 @@ app.listen(process.env.PORT);
     const adapter = new FileSync('DataBase.json')
     const db = low(adapter)
 
-var autoBoleanPiadasRuins = true
+var autoBoleanPiadasRuins = false
 var autoBoleanConsole = false 
 var autoBoleanStatus = true
 var autoBoleanTabble = true
@@ -171,6 +171,71 @@ client.on("message", async message => {
     const args = message.content.slice(db.get("Guild").find({id: "602679739777417256"}).value().prefix).trim().split(/ +/g);
     const comando = args.shift().toLowerCase();
 
+    setTimeout(() => {
+        var a = []
+
+        db.get("RankSystem").value().map(t => {
+        let xp = t.XPcount
+        a.push(xp)
+
+        })
+
+
+        function bubbleSort(a) {
+            var swapped;
+                do {
+                swapped = false;
+                    for (var i=0; i < a.length-1; i++) {
+                    if (a[i] > a[i+1]) {
+                    var temp = a[i];
+                    a[i] = a[i+1];
+                    a[i+1] = temp;
+                    swapped = true;
+                    }
+                }
+            } while (swapped);
+        }
+
+        bubbleSort(a);
+
+        let top1qnt = a.length - 1
+        let top2qnt = a.length - 2
+        let top3qnt = a.length - 3
+
+        let top1search = db.get("RankSystem").find({XPcount: a[top1qnt]}).value()
+        let top2search = db.get("RankSystem").find({XPcount: a[top2qnt]}).value()
+        let top3search = db.get("RankSystem").find({XPcount: a[top3qnt]}).value()
+
+        let topRole = message.guild.roles.find(r => r.name === "Top Level")
+
+        message.guild.members.map(async m => { 
+            if(m.roles.find(r => r.name === "Top Level")) {
+                await m.removeRole(topRole)
+                m.setNickname(`${m.user.username}`)
+            }
+        })
+
+        let top1 = message.guild.members.get(top1search.Id)
+        let top2 = message.guild.members.get(top2search.Id)
+        let top3 = message.guild.members.get(top3search.Id)
+
+        setTimeout(() => {
+            top1.addRole(topRole).then(s => {
+                top1.setNickname(`[1] ${top1.user.username}`)
+            })
+
+            top2.addRole(topRole).then(s => {
+                top2.setNickname(`[2] ${top2.user.username}`)
+            })
+
+            top3.addRole(topRole).then(s => {
+                top3.setNickname(`[3] ${top3.user.username}`)
+            })
+        }, 500);
+        a.length == 0
+
+    }, 2*1000*60*60);
+
 
     let valor = db.get("RankSystem").find({Id: message.author.id}).value()
     if(message.content) {
@@ -179,7 +244,7 @@ client.on("message", async message => {
             if(valor.Id) {
             
                 let antigXP = valor.XPcount
-                let xpPredefine = [0,1,10,15,20,25,50,75,100]
+                let xpPredefine = [0,1,2,3,4,5,7,10,20,25,31,36,40,45,50,100]
                 let random = Math.floor(Math.random()* xpPredefine.length)
 
                 let getXP = xpPredefine[random]                
@@ -187,7 +252,7 @@ client.on("message", async message => {
 
                 db.get("RankSystem").find({Id: message.author.id}).assign({XPcount: newxp}).write()
 
-                let proxLevel = valor.Level * 500
+                let proxLevel = valor.Level * 550
 
                 
                 if(proxLevel <= valor.XPcount) {
@@ -211,68 +276,6 @@ client.on("message", async message => {
                     let newcoins = antigcoins += coinsPredefine[random2]
 
                     db.get("RankSystem").find({Id: message.author.id}).assign({Coins: newcoins}).write()
-
-                    var a = []
-
-                    db.get("RankSystem").value().map(t => {
-                    let xp = t.XPcount
-                    a.push(xp)
-
-                    })
-
-
-                    function bubbleSort(a) {
-                        var swapped;
-                            do {
-                            swapped = false;
-                                for (var i=0; i < a.length-1; i++) {
-                                if (a[i] > a[i+1]) {
-                                var temp = a[i];
-                                a[i] = a[i+1];
-                                a[i+1] = temp;
-                                swapped = true;
-                                }
-                            }
-                        } while (swapped);
-                    }
-
-                    bubbleSort(a);
-
-                    let top1qnt = a.length - 1
-                    let top2qnt = a.length - 2
-                    let top3qnt = a.length - 3
-
-                    let top1search = db.get("RankSystem").find({XPcount: a[top1qnt]}).value()
-                    let top2search = db.get("RankSystem").find({XPcount: a[top2qnt]}).value()
-                    let top3search = db.get("RankSystem").find({XPcount: a[top3qnt]}).value()
-
-                    let topRole = message.guild.roles.find(r => r.name === "Top Level")
-
-                    message.guild.members.map(async m => { 
-                        if(m.roles.find(r => r.name === "Top Level")) {
-                            await m.removeRole(topRole)
-
-                        }
-                    })
-
-                    let top1 = message.guild.members.get(top1search.Id)
-                    let top2 = message.guild.members.get(top2search.Id)
-                    let top3 = message.guild.members.get(top3search.Id)
-
-                    setTimeout(() => {
-                        top1.addRole(topRole).then(s => {
-                            top1.setNickname(`[1] ${top1.user.username}`)
-                        })
-
-                        top2.addRole(topRole).then(s => {
-                            top2.setNickname(`[2] ${top2.user.username}`)
-                        })
-
-                        top3.addRole(topRole).then(s => {
-                            top3.setNickname(`[3] ${top3.user.username}`)
-                        })
-                    }, 500);
-                    a.length == 0
                 } 
             }
         } catch(err) {
