@@ -96,7 +96,7 @@ exports.run = async (Discord, client, message, args, db) => {
             await message.author.send(e).then(msg1 => {
 
                 const filterhelper = msg => msg.author.id
-                const collectorhelper_dois = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                const collectorhelper_dois = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
 
             collectorhelper_dois.on('collect', async p => {
                 hresposta1 = p.content
@@ -117,7 +117,7 @@ exports.run = async (Discord, client, message, args, db) => {
                     .setColor("#6699FF")
                 await message.author.send(e2).then(msg2 => {
 
-                    const collectorhelper_três = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                    const collectorhelper_três = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
 
                 collectorhelper_três.on('collect', async p => {
                         hresposta2 = p.content
@@ -138,7 +138,7 @@ exports.run = async (Discord, client, message, args, db) => {
                         .setColor("#6699FF")
                     await message.author.send(e4).then(msg3 => {
 
-                        const collectorhelper_quatro = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                        const collectorhelper_quatro = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
 
                     collectorhelper_quatro.on('collect', async p => {
                             hresposta3 = p.content
@@ -159,7 +159,7 @@ exports.run = async (Discord, client, message, args, db) => {
                             .setColor("#6699FF")
                         await message.author.send(e6).then(msg4 => {
 
-                            const collectorhelper_cinco = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                            const collectorhelper_cinco = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
 
                         collectorhelper_cinco.on('collect', async p => {
                                 hresposta4 = p.content
@@ -180,7 +180,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                 .setColor("#6699FF")
                             await message.author.send(e8).then(msg5 => {
                                     
-                                const collectorhelper_seis = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                const collectorhelper_seis = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
 
                             collectorhelper_seis.on('collect', async p => {
                                     hresposta5 = p.content
@@ -201,7 +201,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                     .setColor("#6699FF")
                                 await message.author.send(e9).then(msg6 => {
                                     
-                                    const collectorhelper_sete = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                    const collectorhelper_sete = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
     
                                 collectorhelper_sete.on('collect', async p => {
                                         hresposta6 = p.content
@@ -222,7 +222,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                         .setColor("#6699FF")
                                     await message.author.send(e11).then(msg7 => {
                                     
-                                        const collectorhelper_oito = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                        const collectorhelper_oito = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
         
                                     collectorhelper_oito.on('collect', async p => {
                                             hresposta7 = p.content
@@ -243,7 +243,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                             .setColor("#6699FF")
                                         await message.author.send(e13).then(msg8 => {
                                     
-                                            const collectorhelper_nove = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                            const collectorhelper_nove = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
             
                                         collectorhelper_nove.on('collect', async p => {
                                                 hresposta8 = p.content
@@ -264,7 +264,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                 .setColor("#6699FF")
                                             await message.author.send(e15).then(msg9 => {
                                     
-                                                const collectorhelper_dez = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                const collectorhelper_dez = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
                 
                                             collectorhelper_dez.on('collect', async p => {
                                                     hresposta9 = p.content
@@ -285,7 +285,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                     .setColor("#6699FF")
                                                 await message.author.send(e17).then(msg10 => {
                                     
-                                                    const collectorhelper_dez = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                    const collectorhelper_dez = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
                     
                                                 collectorhelper_dez.on('collect', async p => {
                                                         hresposta10 = p.content
@@ -306,7 +306,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                         .setColor("#6699FF")
                                                     await message.author.send(e19).then(msg11 => {
                                     
-                                                        const collectorhelper_onze = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                        const collectorhelper_onze = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
                         
                                                     collectorhelper_onze.on('collect', async p => {
                                                             hresposta11 = p.content
@@ -327,7 +327,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                             .setColor("#6699FF")
                                                         await message.author.send(e19).then(msg11 => {
                                     
-                                                            const collectorhelper_onze = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                            const collectorhelper_onze = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
                             
                                                         collectorhelper_onze.on('collect', async p => {
                                                                 hresposta12 = p.content
@@ -475,7 +475,7 @@ exports.run = async (Discord, client, message, args, db) => {
             await message.author.send(e).then(msg1 => {
 
                 const filterhelper = msg => msg.author.id
-                const collectorhelper_dois = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                const collectorhelper_dois = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
 
             collectorhelper_dois.on('collect', async p => {
                 hresposta1 = p.content
@@ -496,7 +496,7 @@ exports.run = async (Discord, client, message, args, db) => {
                     .setColor("#6699FF")
                 await message.author.send(e2).then(msg2 => {
 
-                    const collectorhelper_três = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                    const collectorhelper_três = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
 
                 collectorhelper_três.on('collect', async p => {
                         hresposta2 = p.content
@@ -517,7 +517,7 @@ exports.run = async (Discord, client, message, args, db) => {
                         .setColor("#6699FF")
                     await message.author.send(e4).then(msg3 => {
 
-                        const collectorhelper_quatro = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                        const collectorhelper_quatro = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
 
                     collectorhelper_quatro.on('collect', async p => {
                             hresposta3 = p.content
@@ -538,7 +538,7 @@ exports.run = async (Discord, client, message, args, db) => {
                             .setColor("#6699FF")
                         await message.author.send(e6).then(msg4 => {
 
-                            const collectorhelper_cinco = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                            const collectorhelper_cinco = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
 
                         collectorhelper_cinco.on('collect', async p => {
                                 hresposta4 = p.content
@@ -559,7 +559,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                 .setColor("#6699FF")
                             await message.author.send(e8).then(msg5 => {
                                     
-                                const collectorhelper_seis = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                const collectorhelper_seis = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
 
                             collectorhelper_seis.on('collect', async p => {
                                     hresposta5 = p.content
@@ -580,7 +580,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                     .setColor("#6699FF")
                                 await message.author.send(e9).then(msg6 => {
                                     
-                                    const collectorhelper_sete = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                    const collectorhelper_sete = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
     
                                 collectorhelper_sete.on('collect', async p => {
                                         hresposta6 = p.content
@@ -601,7 +601,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                         .setColor("#6699FF")
                                     await message.author.send(e11).then(msg7 => {
                                     
-                                        const collectorhelper_oito = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                        const collectorhelper_oito = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
         
                                     collectorhelper_oito.on('collect', async p => {
                                             hresposta7 = p.content
@@ -622,7 +622,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                             .setColor("#6699FF")
                                         await message.author.send(e13).then(msg8 => {
                                     
-                                            const collectorhelper_nove = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                            const collectorhelper_nove = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
             
                                         collectorhelper_nove.on('collect', async p => {
                                                 hresposta8 = p.content
@@ -643,7 +643,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                 .setColor("#6699FF")
                                             await message.author.send(e15).then(msg9 => {
                                     
-                                                const collectorhelper_dez = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                const collectorhelper_dez = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
                 
                                             collectorhelper_dez.on('collect', async p => {
                                                     hresposta9 = p.content
@@ -664,7 +664,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                     .setColor("#6699FF")
                                                 await message.author.send(e17).then(msg10 => {
                                     
-                                                    const collectorhelper_dez = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                    const collectorhelper_dez = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
                     
                                                 collectorhelper_dez.on('collect', async p => {
                                                         hresposta10 = p.content
@@ -685,7 +685,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                         .setColor("#6699FF")
                                                     await message.author.send(e19).then(msg11 => {
                                     
-                                                        const collectorhelper_onze = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                        const collectorhelper_onze = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
                         
                                                     collectorhelper_onze.on('collect', async p => {
                                                             hresposta11 = p.content
@@ -706,7 +706,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                             .setColor("#6699FF")
                                                         await message.author.send(e19).then(msg11 => {
                                     
-                                                            const collectorhelper_onze = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                            const collectorhelper_onze = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
                             
                                                         collectorhelper_onze.on('collect', async p => {
                                                                 hresposta12 = p.content
@@ -727,7 +727,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                                 .setColor("#6699FF")
                                                             await message.author.send(e21).then(msg12 => {
 
-                                                                const collectorhelper_doze = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                                const collectorhelper_doze = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
 
                                                             collectorhelper_doze.on('collect', async p => {
                                                                     hresposta13 = p.content
@@ -748,7 +748,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                                     .setColor("#6699FF")
                                                                 await message.author.send(e23).then(msg13 => {
                                                                     
-                                                                    const collectorhelper_treze = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                                    const collectorhelper_treze = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
 
                                                                 collectorhelper_treze.on('collect', async p => {
 
@@ -770,7 +770,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                                     .setColor("#6699FF")
                                                                 await message.author.send(e25).then(msg14 => {
                                                                     
-                                                                    const collectorhelper_quatorze = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                                    const collectorhelper_quatorze = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
 
                                                                     collectorhelper_quatorze.on('collect', async p => {
 
@@ -792,7 +792,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                                         .setColor("#6699FF")
                                                                     await message.author.send(e25).then(msg15 => {
                                                                     
-                                                                        const collectorhelper_dezeseis = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                                        const collectorhelper_dezeseis = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
     
                                                                         collectorhelper_dezeseis.on('collect', async p => {
     
@@ -814,7 +814,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                                             .setColor("#6699FF")
                                                                         await message.author.send(e25).then(msg16 => {
                                                                     
-                                                                            const collectorhelper_dezesete = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                                            const collectorhelper_dezesete = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
         
                                                                             collectorhelper_dezesete.on('collect', async p => {
         
@@ -836,7 +836,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                                                 .setColor("#6699FF")
                                                                             await message.author.send(e25).then(msg17 => {
                                                                     
-                                                                                const collectorhelper_dezoito = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                                                const collectorhelper_dezoito = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
             
                                                                                 collectorhelper_dezoito.on('collect', async p => {
             
@@ -858,7 +858,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                                                     .setColor("#6699FF")
                                                                                 await message.author.send(e25).then(msg18 => {
                                                                     
-                                                                                    const collectorhelper_dezenove = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                                                    const collectorhelper_dezenove = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
                 
                                                                                     collectorhelper_dezenove.on('collect', async p => {
                 
@@ -880,7 +880,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                                                         .setColor("#6699FF")
                                                                                     await message.author.send(e25).then(msg19 => {
                                                                     
-                                                                                        const collectorhelper_vinte = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                                                        const collectorhelper_vinte = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
                     
                                                                                         collectorhelper_vinte.on('collect', async p => {
                     
@@ -902,7 +902,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                                                             .setColor("#6699FF")
                                                                                         await message.author.send(e25).then(msg20 => {
                                                                     
-                                                                                            const collectorhelper_vinteeum = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                                                            const collectorhelper_vinteeum = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
                         
                                                                                             collectorhelper_vinteeum.on('collect', async p => {
                         
@@ -924,7 +924,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                                                                 .setColor("#6699FF")
                                                                                             await message.author.send(e25).then(msg21 => {
                                                                     
-                                                                                                const collectorhelper_vinteedois = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                                                                const collectorhelper_vinteedois = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
                             
                                                                                                 collectorhelper_vinteedois.on('collect', async p => {
                             
@@ -946,7 +946,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                                                                     .setColor("#6699FF")
                                                                                                 await message.author.send(e25).then(msg22 => {
                                                                     
-                                                                                                    const collectorhelper_vinteetres = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                                                                    const collectorhelper_vinteetres = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
                                 
                                                                                                     collectorhelper_vinteetres.on('collect', async p => {
                                 
@@ -968,7 +968,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                                                                         .setColor("#6699FF")
                                                                                                     await message.author.send(e25).then(msg23 => {
                                                                     
-                                                                                                        const collectorhelper_vinteequatro = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                                                                        const collectorhelper_vinteequatro = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
                                     
                                                                                                         collectorhelper_vinteequatro.on('collect', async p => {
                                     
@@ -990,7 +990,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                                                                             .setColor("#6699FF")
                                                                                                         await message.author.send(e25).then(msg24 => {
                                                                     
-                                                                                                        const collectorhelper_viteecinco = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                                                                        const collectorhelper_viteecinco = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
                                     
                                                                                                         collectorhelper_viteecinco.on('collect', async p => {
                                     
@@ -1012,7 +1012,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                                                                             .setColor("#6699FF")
                                                                                                         await message.author.send(e25).then(msg25 => {
                                                                     
-                                                                                                            const collectorhelper_vinteeseis = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                                                                            const collectorhelper_vinteeseis = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
                                         
                                                                                                             collectorhelper_vinteeseis.on('collect', async p => {
                                         
@@ -1034,7 +1034,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                                                                                 .setColor("#6699FF")
                                                                                                             await message.author.send(e25).then(msg25 => {
                                                                     
-                                                                                                                const collectorhelper_vinteesete = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                                                                                const collectorhelper_vinteesete = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
                                             
                                                                                                                 collectorhelper_vinteesete.on('collect', async p => {
                                             
@@ -1056,7 +1056,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                                                                                     .setColor("#6699FF")
                                                                                                                 await message.author.send(e25).then(msg26 => {
                                                                     
-                                                                                                                    const collectorhelper_vinteeoito = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                                                                                    const collectorhelper_vinteeoito = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
                                                 
                                                                                                                     collectorhelper_vinteeoito.on('collect', async p => {
                                                 
@@ -1078,7 +1078,7 @@ exports.run = async (Discord, client, message, args, db) => {
                                                                                                                         .setColor("#6699FF")
                                                                                                                     await message.author.send(e25).then(msg27 => {
                                                                     
-                                                                                                                        const collectorhelper_dezoito = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 5*1000*60});
+                                                                                                                        const collectorhelper_dezoito = msg.channel.createMessageCollector(filterhelper, {max: 1, time: 10*1000*60});
                                                     
                                                                                                                         collectorhelper_dezoito.on('collect', async p => {
                                                     
