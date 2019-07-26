@@ -34,6 +34,26 @@ var uptime_m = 0
 var uptime_h = 0
 var uptime_d = 0
 
+client.on("guildMemberAdd", async Member => {
+        let embed = new Discord.RichEmbed()
+            .setDescription(`:tada: ${Member}, entrou! Seja bem vindo.`)
+            .setThumbnail(message.author.displayAvatarURL)
+            .setColor("#6699FF")
+            .setFooter(`Cisla © Você foi o ${client.users.size}° membro a entrar!`)
+            .setTimestamp(new Date())
+        message.guild.channels.get("602869949043834900").send(embed)
+})
+
+client.on("guildMemberRemove", async Member => {
+    let embed = new Discord.RichEmbed()
+            .setDescription(`${Member}, saiu! Ate mais.`)
+            .setThumbnail(message.author.displayAvatarURL)
+            .setColor("#6699FF")
+            .setFooter(`Cisla © Você foi o ${client.users.size}° membro a sair..`)
+            .setTimestamp(new Date())
+        message.guild.channels.get("603351890922831892").send(embed)
+})
+
 client.on("ready", () => {
     console.log("Iniciando...")
 
@@ -180,12 +200,12 @@ client.on("message", async message => {
 
 
                     let embed = new Discord.RichEmbed()
-                        .setDescription(`:tada: ${message.author}, parabéns, Você upou de level!\n\n• *Level atual* ${valor.Level}/30\n• *XP* ${valor.XPcount}/${valor.Level * 500}\n\n Você ganhou ${coinsPredefine[random2]} coins como recompensa!`)
+                        .setDescription(`:tada: ${message.author}, parabéns, Você upou de level!\n\n• *Level atual* ${valor.Level}\n• *XP* ${valor.XPcount}/${valor.Level * 500}\n\n Você ganhou ${coinsPredefine[random2]} coins como recompensa!`)
                         .setThumbnail(message.author.displayAvatarURL)
                         .setColor("#6699FF")
                         .setFooter("Cisla ©")
                         .setTimestamp(new Date())
-                    message.channel.send(embed)
+                    message.guild.channels.get("603351890922831892").send(embed)
 
                     let antigcoins = valor.Coins
                     let newcoins = antigcoins += coinsPredefine[random2]
