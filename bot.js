@@ -17,8 +17,6 @@ response.sendStatus(200);
 });
 app.listen(process.env.PORT);
 
-
-
     const low = require('lowdb')
     const FileSync = require('lowdb/adapters/FileSync')
     const adapter = new FileSync('DataBase.json')
@@ -53,6 +51,8 @@ client.on("guildMemberRemove", async Member => {
             .setTimestamp(new Date())
         message.guild.channels.get("603351890922831892").send(embed)
 })
+
+
 
 client.on("ready", () => {
     console.log("Iniciando...")
@@ -211,7 +211,68 @@ client.on("message", async message => {
                     let newcoins = antigcoins += coinsPredefine[random2]
 
                     db.get("RankSystem").find({Id: message.author.id}).assign({Coins: newcoins}).write()
-                
+
+                    var a = []
+
+                    db.get("RankSystem").value().map(t => {
+                    let xp = t.XPcount
+                    a.push(xp)
+
+                    })
+
+
+                    function bubbleSort(a) {
+                        var swapped;
+                            do {
+                            swapped = false;
+                                for (var i=0; i < a.length-1; i++) {
+                                if (a[i] > a[i+1]) {
+                                var temp = a[i];
+                                a[i] = a[i+1];
+                                a[i+1] = temp;
+                                swapped = true;
+                                }
+                            }
+                        } while (swapped);
+                    }
+
+                    bubbleSort(a);
+
+                    let top1qnt = a.length - 1
+                    let top2qnt = a.length - 2
+                    let top3qnt = a.length - 3
+
+                    let top1search = db.get("RankSystem").find({XPcount: a[top1qnt]}).value()
+                    let top2search = db.get("RankSystem").find({XPcount: a[top2qnt]}).value()
+                    let top3search = db.get("RankSystem").find({XPcount: a[top3qnt]}).value()
+
+                    let topRole = message.guild.roles.find(r => r.name === "Top Level")
+
+                    message.guild.members.map(async m => { 
+                        if(m.roles.find(r => r.name === "Top Level")) {
+                            await m.removeRole(topRole)
+
+                        }
+                    })
+
+                    let top1 = message.guild.members.get(top1search.Id)
+                    let top2 = message.guild.members.get(top2search.Id)
+                    let top3 = message.guild.members.get(top3search.Id)
+
+                    setTimeout(() => {
+                        top1.addRole(topRole).then(s => {
+                            top1.setNickname(`[1] ${top1.user.username}`)
+                        })
+
+                        top2.addRole(topRole).then(s => {
+                            top2.setNickname(`[2] ${top2.user.username}`)
+                        })
+
+                        top3.addRole(topRole).then(s => {
+                            top3.setNickname(`[3] ${top3.user.username}`)
+                        })
+                    }, 500);
+                    a.length == 0
                 } 
             }
         } catch(err) {

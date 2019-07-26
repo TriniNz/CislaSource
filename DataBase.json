@@ -5,9 +5,116 @@
       "prefix": "!"
     }
   ],
-  "Formularios": [],
+  "Formularios": [
+    {
+      "Usuario": "!̶̶ Lass_  ̶̶βʍ ̶̶",
+      "Id": "535157532910419969",
+      "Data": "26 de Jul, 2019, ás 03:29:41",
+      "MessageID": "604154365632184350",
+      "Formtype": "Ajudante",
+      "Formulario": [
+        "Mateus",
+        "Lass_",
+        "30/06/2005 14 Anos",
+        "4 anos",
+        "Escola",
+        "A tarde toda e um pouco da noite",
+        "Bom jogo no servidor a bastante tempo(antigo sv) devo ser bem conhecido pela galera(ou não -.-) então não tenho motivos para causar problemas no servidor ja que até pra mim isso e considerado infantilidade",
+        "League of legends: Um jogo de computador com os graficos muito bons, tem skins para personalizar seu campeão e tem modos de jogos que são muito interessantes, recentemente lançou um novo modo TFT( team fight tatics) você começa em um tabulerio escolhe um campeão que vai numa rodinha ai você caminha pra pegar ele ai vai upando ele pra ficar mais forte!",
+        "As minhas intenções são: Ajudar as pessoas/staffs dando dicas de como fazer as coisas, ja que eu fico bastante tempo no discord tenho como responder muitas perguntas ja que so estudo de manhã tenho o tempo livre a tarde ea noite.. so que eu sou humano tenho q durmir de noite.",
+        "Sim. faço parte de uma equipe e aprendi muito com eles, aprendi a programar e aprendi alguns comandos aprendi a ser um bom staff",
+        "Eu entro call pelo celular, então sim!",
+        "Um jovem de 14 anos ant-social com uma vida completamente aleatoria, vivendo no computador programando e no discord, tentando ser +1 pessoa feliz no universo não tenho nenhum detalhe especial."
+      ]
+    }
+  ],
   "Mutes": [],
   "Bans": [],
   "Kicks": [],
-  "RankSystem":[]
+  "RankSystem": [
+    {
+      "Usuario": "yNextPvPz",
+      "Id": "177909979284504577",
+      "XPcount": 19256,
+      "Level": 39,
+      "Coins": 497
+    },
+    {
+      "Usuario": "AbsolutZ",
+      "Id": "357192105845587969",
+      "XPcount": 37796,
+      "Level": 76,
+      "Coins": 910
+    },
+    {
+      "Usuario": "Realizado",
+      "Id": "390356990305763340",
+      "XPcount": 5998,
+      "Level": 12,
+      "Coins": 116
+    },
+    {
+      "Usuario": "marcos_cisla",
+      "Id": "461346148267982858",
+      "XPcount": 5583,
+      "Level": 12,
+      "Coins": 118
+    },
+    {
+      "Usuario": "lucas_cisla",
+      "Id": "391944009054027776",
+      "XPcount": 7149,
+      "Level": 15,
+      "Coins": 194
+    },
+    {
+      "Usuario": "TriniNz",
+      "Id": "429825875467304960",
+      "XPcount": 8499,
+      "Level": 17,
+      "Coins": 200
+    },
+    {
+      "Usuario": "Vicentx",
+      "Id": "330763998264033282",
+      "XPcount": 12813,
+      "Level": 26,
+      "Coins": 345
+    },
+    {
+      "Usuario": "!̶̶ Lass_  ̶̶βʍ ̶̶",
+      "Id": "535157532910419969",
+      "XPcount": 3099,
+      "Level": 7,
+      "Coins": 65
+    },
+    {
+      "Usuario": "ErickDiordam",
+      "Id": "553369855709937683",
+      "XPcount": 2008,
+      "Level": 5,
+      "Coins": 52
+    },
+    {
+      "Usuario": "</ H4CK€D_»",
+      "Id": "465006917438275587",
+      "XPcount": 550,
+      "Level": 2,
+      "Coins": 8
+    },
+    {
+      "Usuario": "HectrorEzz",
+      "Id": "508277160981692420",
+      "XPcount": 16260,
+      "Level": 33,
+      "Coins": 358
+    },
+    {
+      "Usuario": "! ! ! ! ImFlaamerZ_",
+      "Id": "265954501238718465",
+      "XPcount": 1210,
+      "Level": 3,
+      "Coins": 15
+    }
+  ]
 }
