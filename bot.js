@@ -2,6 +2,11 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 const id = require('./config.json')
 
+    const low = require('lowdb')
+    const FileSync = require('lowdb/adapters/FileSync')
+    const adapter = new FileSync('DataBase.json')
+    const db = low(adapter)
+
 const Request = require('request')
 const express = require('express');
 const keepalive = require('express-glitch-keepalive');
@@ -17,11 +22,6 @@ response.sendStatus(200);
 });
 app.listen(process.env.PORT);
 
-    const low = require('lowdb')
-    const FileSync = require('lowdb/adapters/FileSync')
-    const adapter = new FileSync('DataBase.json')
-    const db = low(adapter)
-
 var autoBoleanPiadasRuins = false
 var autoBoleanConsole = false 
 var autoBoleanStatus = true
@@ -31,28 +31,6 @@ var uptime_s = 0
 var uptime_m = 0
 var uptime_h = 0
 var uptime_d = 0
-
-client.on("guildMemberAdd", async Member => {
-        let embed = new Discord.RichEmbed()
-            .setDescription(`:tada: ${Member}, entrou! Seja bem vindo.`)
-            .setThumbnail(message.author.displayAvatarURL)
-            .setColor("#6699FF")
-            .setFooter(`Cisla © Você foi o ${client.users.size}° membro a entrar!`)
-            .setTimestamp(new Date())
-        message.guild.channels.get("602869949043834900").send(embed)
-})
-
-client.on("guildMemberRemove", async Member => {
-    let embed = new Discord.RichEmbed()
-            .setDescription(`${Member}, saiu! Ate mais.`)
-            .setThumbnail(message.author.displayAvatarURL)
-            .setColor("#6699FF")
-            .setFooter(`Cisla © Você foi o ${client.users.size}° membro a sair..`)
-            .setTimestamp(new Date())
-        message.guild.channels.get("603351890922831892").send(embed)
-})
-
-
 
 client.on("ready", () => {
     console.log("Iniciando...")
@@ -163,6 +141,26 @@ var time = Date().split(/ +/g);
     }, 1000);
 
 });
+
+client.on("guildMemberAdd", async Member => {
+    let embed = new Discord.RichEmbed()
+        .setDescription(`:tada: ${Member}, entrou! Seja bem vindo.`)
+        .setThumbnail(Member.user.displayAvatarURL)
+        .setColor("#6699FF")
+        .setFooter(`Cisla © Você foi o ${client.users.size}° membro a entrar!`)
+        .setTimestamp(new Date())
+    client.guilds.get(Member.guild.id).channels.get("602869949043834900").send(embed)
+})
+
+client.on("guildMemberRemove", async Member => {
+let embed = new Discord.RichEmbed()
+        .setDescription(`${Member}, saiu! Ate mais.`)
+        .setThumbnail(Member.user.displayAvatarURL)
+        .setColor("#6699FF")
+        .setFooter(`Cisla © Você foi o ${client.users.size}° membro a sair..`)
+        .setTimestamp(new Date())
+    client.guilds.get(Member.guild.id).channels.get("602870117432426498").send(embed)
+})
 
 client.on("message", async message => {
 
