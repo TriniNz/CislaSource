@@ -108,7 +108,7 @@ var time = Date().split(/ +/g);
 
         if(autoBoleanConsole === true ) {
             setInterval(() => {
-                AutoReloadStatus()
+                AutoRealoadConsole()
             },5*1000);
         } else {
             AutoRealoadConsole()
@@ -157,7 +157,7 @@ let embed = new Discord.RichEmbed()
         .setDescription(`${Member}, saiu! Ate mais.`)
         .setThumbnail(Member.user.displayAvatarURL)
         .setColor("#6699FF")
-        .setFooter(`Cisla © Você foi o ${client.users.size}° membro a sair..`)
+        .setFooter(`Cisla © Você saiu em ${client.users.size}° lugar..`)
         .setTimestamp(new Date())
     client.guilds.get(Member.guild.id).channels.get("602870117432426498").send(embed)
 })
