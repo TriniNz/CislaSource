@@ -12,15 +12,18 @@ const express = require('express');
 const keepalive = require('express-glitch-keepalive');
 //npm i --save express express-glitch-keepalive
 
-const app = express();
-app.use(keepalive);
-app.get('/', (req, res) => {
-res.json('Este bot deve estar online! Uptimerobot vai mantê-lo vivo');
-});
-app.get("/", (request, response) => {
-response.sendStatus(200);
-});
-app.listen(process.env.PORT);
+    const app = express();
+    app.use(keepalive);
+    
+    app.get('/', (req, res) => {
+        res.json('Este bot deve estar online! Uptimerobot vai mantê-lo vivo');
+    });
+
+    app.get("/", (request, response) => {
+        response.sendStatus(200);
+    });
+
+    app.listen(process.env.PORT);
 
 var autoBoleanPiadasRuins = false
 var autoBoleanConsole = false 
@@ -268,7 +271,7 @@ client.on("message", async message => {
                         .setColor("#6699FF")
                         .setFooter("Cisla ©")
                         .setTimestamp(new Date())
-                    message.guild.channels.get("603351890922831892").send(embed)
+                    message.guild.channels.get("6604812181137129472").send(embed)
 
                     let antigcoins = valor.Coins
                     let newcoins = antigcoins += coinsPredefine[random2]

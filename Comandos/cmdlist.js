@@ -2,7 +2,7 @@ const fs = require('fs')
 
 exports.run = async (Discord, client, message, args, db) => {
     
-    fs.readdir("./comandos", function(err, files){
+    fs.readdir("./Comandos", function(err, files){
         const string = "'" + files + "'"
         const string2 = string.replace(/,+/g, '\n')
 
