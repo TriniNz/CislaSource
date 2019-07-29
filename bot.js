@@ -271,7 +271,7 @@ client.on("message", async message => {
                         .setColor("#6699FF")
                         .setFooter("Cisla ©")
                         .setTimestamp(new Date())
-                    message.guild.channels.get("6604812181137129472").send(embed)
+                    message.guild.channels.get("604812181137129472").send(embed)
 
                     let antigcoins = valor.Coins
                     let newcoins = antigcoins += coinsPredefine[random2]
