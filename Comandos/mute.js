@@ -80,9 +80,6 @@ exports.run = async (Discord, client, message, args, db) => {
                         Responsavel: `${message.author.id}`
                     }).write()
 
-
-                    
-
                     message.guild.channels.get("602717447933657099").send(Embed_Muted)
                     userMute.addRole(MuteRole)
             }
