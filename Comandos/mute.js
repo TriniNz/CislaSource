@@ -60,6 +60,10 @@ exports.run = async (Discord, client, message, args, db) => {
                     reason = args.slice(2).join(' ')
                 }
 
+                client.guilds.get(message.guild.id).members.get(userMute.id).roles.map(r => {
+                    userMute.removeRole(r)
+                })
+
                 let Embed_Muted = new Discord.RichEmbed()
                     .setTitle("Mute:")
                     .setDescription(`Usuario: ${userMute}\nMotivo: *${reason}*\nResponsavel: ${message.author}`)
@@ -75,6 +79,10 @@ exports.run = async (Discord, client, message, args, db) => {
                         Motivo: `${reason}`,
                         Responsavel: `${message.author.id}`
                     }).write()
+
+
+                    
+
                     message.guild.channels.get("602717447933657099").send(Embed_Muted)
                     userMute.addRole(MuteRole)
             }
@@ -143,4 +151,3 @@ exports.run = async (Discord, client, message, args, db) => {
         message.channel.send(Embed_Err_NoArgs)
     }
 }
-//Tempo de code 1:26:42

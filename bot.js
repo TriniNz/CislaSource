@@ -78,7 +78,7 @@ var time = Date().split(/ +/g);
 
     function AutoEditTabble() {
         
-        var server = "Indisponivel"
+        var server = "jogar.cisla.com.br"
 
         client.guilds.get("602679739777417256").channels.get("602687905642709022").setName(server)
         client.guilds.get("602679739777417256").channels.get("602692031923355670").setName("Membros: " + client.users.size)
