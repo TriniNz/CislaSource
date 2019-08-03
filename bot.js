@@ -62,8 +62,8 @@ var time = Date().split(/ +/g);
     function AutoStatusEdit() {
         let stats = [
             `Support: ${client.guilds.get("602679739777417256").members.get("429825875467304960").user.tag}`,
-            `Cisla Store: www.Cisla.shop.com`,
-            `Jogar.Cisla.host.com`,
+            `Cisla Store: www.Cisla.com.br`,
+            `IP: Jogar.cisla.com.br`,
             `Meu prefixo é ${db.get("Guild").find({id: "602679739777417256"}).value().prefix}`,
             `Voce pode ver meus comandos utilizando ${db.get("Guild").find({id: "602679739777417256"}).value().prefix}cmdlist.`,
             `Achou um bug? Use ${db.get("Guild").find({id: "602679739777417256"}).value().prefix}feedback e reporte-o.`,
