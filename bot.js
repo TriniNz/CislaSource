@@ -81,7 +81,7 @@ var time = Date().split(/ +/g);
         var server = "jogar.cisla.com.br"
 
         client.guilds.get("602679739777417256").channels.get("602687905642709022").setName(server)
-        client.guilds.get("602679739777417256").channels.get("602692031923355670").setName("Membros: " + client.users.size)
+        client.guilds.get("602679739777417256").channels.get("602692031923355670").setName("Membros: " + ${client.guilds.get("602679739777417256").memberCount})
         var url = 'http://mcapi.us/server/status?ip=' + server
 
         Request(url, function(err, response, body) {
