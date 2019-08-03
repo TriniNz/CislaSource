@@ -7,6 +7,9 @@ const id = require('./config.json')
     const adapter = new FileSync('DataBase.json')
     const db = low(adapter)
 
+    const adaptercmd = new FileSync('./Comandos/-InfoComandos.json')
+    const dbcmd = low(adaptercmd)
+
 const Request = require('request')
 const express = require('express');
 const keepalive = require('express-glitch-keepalive');
@@ -334,45 +337,39 @@ client.on("message", async message => {
 
     if(message.channel.id !== "602871021204275223") {
 
-        if(message.content.toLowerCase().indexOf(db.get("Guild").find({id: "602679739777417256"}).value().prefix) == 0) {
-
-            let cmd = comando.split(db.get("Guild").find({id: "602679739777417256"}).value().prefix)
-        
+        if(message.content.indexOf("!") == 0) {
             try {
-
-            let comandos = require(`./Comandos/${cmd[1]}.js`);
-
+                let cmd = comando.replace("!", "")
+                console.log(cmd)
+    
+                let cmdinfo = dbcmd.get("Comandos").find({aliases: [cmd]}).value()
+                let comandos = require(`./Comandos/${cmdinfo.name}.js`);
+    
                 comandos.run(Discord, client, message, args, db)
-            } catch (e) {
-
-
-                if(e.code === 'MODULE_NOT_FOUND') {
-                    console.log("⠀");
-                    console.log(`Erro: um player tentou executar um comando inexistente (${comando}).`);
-                    console.log("⠀");
-
-                    let Embed_NOT_FOUND_ERR = new Discord.RichEmbed()
-                        .setDescription("Não foi possivel encontrar este comando... Mas você pode encontrar todos meus comandos digitando `!cmdlist`.")
-                        .setFooter("Erro: Comando não encontrado.")
-                        .setTimestamp(new Date())
-                        .setColor("#6699FF")
-                    return message.reply(Embed_NOT_FOUND_ERR).then(msg => msg.delete(15*1000))
+    
+                } catch(err) {
+                    if(err.message === "Cannot read property 'name' of undefined") {
+                        let Embed_NOT_FOUND_ERR = new Discord.RichEmbed()
+                            .setDescription("Não foi possivel encontrar este comando... Mas você pode encontrar todos meus comandos digitando `!cmdlist`.")
+                            .setFooter("Erro: Comando não encontrado.")
+                            .setTimestamp(new Date())
+                            .setColor("#6699FF")
+                        return message.reply(Embed_NOT_FOUND_ERR).then(msg => msg.delete(15*1000))
                 } else {
                     console.log(e)
-                    console.log(" ")
-                    console.log(`Erro: Há um erro no codigo (${comando}).`)
-                    console.log(" ")
-
-                    let Embed_NOT_DEFINED_ERR = new Discord.RichEmbed()
-                        .setDescription("Hey, eu acho que tem um bug neste codigo :thinking:, eu já chamei meu criador para resolver isso!")
-                        .setFooter("Erro: Não definido")
-                        .setTimestamp(new Date())
-                        .setColor("#6699FF")
-                    return message.reply(Embed_NOT_DEFINED_ERR).then(msg => msg.delete(15*1000))
+                        console.log(" ")
+                        console.log(`Erro: Há um erro no codigo (${comando}).`)
+                        console.log(" ")
+    
+                        let Embed_NOT_DEFINED_ERR = new Discord.RichEmbed()
+                            .setDescription("Hey, eu acho que tem um bug neste codigo :thinking:, eu já chamei meu criador para resolver isso!")
+                            .setFooter("Erro: Não definido")
+                            .setTimestamp(new Date())
+                            .setColor("#6699FF")
+                        return message.reply(Embed_NOT_DEFINED_ERR).then(msg => msg.delete(15*1000))
                 }
-            } finally {};
+            }
         }
-
     }
 });
 

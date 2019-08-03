@@ -1,0 +1,198 @@
+{
+    
+"Comandos":[
+    
+
+    {
+      "name": "accform",
+      "descricao": "Aceita o formulario do usuario.",
+      "aliases": [
+        "accform",
+        "aceitarformulario",
+        "acceptform",
+        "formacc"
+      ]
+    },
+
+    {
+      "name": "aplicar-se",
+      "descricao": "Formulario para aplicação de ajudantes e GCs.",
+      "aliases": [
+        "aplicar-se",
+        "aplicar",
+        "formulario",
+        "form"
+      ]
+    },
+    
+    {
+      "name": "ban",
+      "descricao": "Expulsa um usuario do servidor e o impede de entrar ate que seja despunido.",
+      "aliases": [
+        "ban",
+        "banir",
+        "punir"
+      ]
+    },
+
+    {
+      "name": "clan",
+      "descricao": "Opções para criar, excluir, e adicionar membros em seu clan.",
+      "aliases": [
+        "clan",
+        "clã"
+      ]
+    },
+
+    {
+      "name": "clear",
+      "descricao": "Apaga determinado numero de mensagens.",
+      "aliases": [
+        "clear",
+        "limpar",
+        "apagarmsgs"
+      ]
+    },
+
+    {
+      "name": "clearchannel",
+      "descricao": "Apaga todas as mensagens de um canal.",
+      "aliases": [
+        "clearchannel",
+        "limparcanal"
+      ]
+    },
+
+    {
+      "name": "cmdlist",
+      "descricao": "Mostra a lista de comandos e o que cada um deles faz.",
+      "aliases": [
+        "cmdlist",
+        "comandos",
+        "lista"
+      ]
+    },
+
+    {
+      "name": "delform",
+      "descricao": "Deleta o formulario de determinado membro",
+      "aliases": [
+        "delform",
+        "deletarform",
+        "removerform",
+        "formdel"
+      ]
+    },
+   
+    {
+      "name": "encbot",
+      "descricao": "Cria um backup da database atual.",
+      "aliases": [
+        "encbot",
+        "encerrarbot",
+        "botenc"
+      ]
+    },
+
+    {
+      "name": "feedback",
+      "descricao": "Envia seu feedback para o desenvolvedor.",
+      "aliases": [
+        "feedback"
+      ]
+    },
+
+    {
+      "name": "gay",
+      "descricao": "Mostra quantos por cento o usuario é gay.",
+      "aliases": [
+        "gay"
+      ]
+    },
+
+    {
+      "name": "kick",
+      "descricao": "Expulsa um determinado usuario.",
+      "aliases": [
+        "kick",
+        "expulsar",
+        "kickar"
+      ]
+    },
+
+    {
+      "name": "mute",
+      "descricao": "Sliencia um determinado membro, impedindo o mesmo de falar e conectar nos canais",
+      "aliases": [
+        "mute",
+        "mutar",
+        "silenciar",
+        "calar"
+      ]
+    },
+
+    {
+      "name": "shop",
+      "descricao": "Loja para gastar teus coins.",
+      "aliases": [
+        "shop",
+        "loja",
+        "coins"
+      ]
+    },
+
+    {
+      "name": "source",
+      "descricao": "Envia o link do meu repositorio no GitHub.",
+      "aliases": [
+        "source",
+        "codigo",
+        "code"
+      ]
+    },
+
+    {
+      "name": "statistic",
+      "descricao": "Mostra as estatiscas atuais do servidor.",
+      "aliases": [
+        "statistic",
+        "estatisticas",
+        "stats"
+      ]
+    },
+
+    {
+      "name": "ticket",
+      "descricao": "Cria um canal de suporte para o usuario.",
+      "aliases": [
+        "ticket",
+        "suporte",
+        "ajuda"
+      ]
+    },
+
+    {
+      "name": "toplevel",
+      "descricao": "Mostra o top 12 que mais falaram no servidor.",
+      "aliases": [
+        "toplevel",
+        "leveltop",
+        "ranklevel",
+        "rank",
+        "levelrank"
+      ]
+    },
+
+    {
+      "name": "verlevel",
+      "descricao": "Mostra o level do usuario marcado, caso não haja, mostra teu level.",
+      "aliases": [
+        "verlevel",
+        "profile",
+        "level",
+        "levelver",
+        "infolevel"
+      ]
+    }
+  ]
+}
