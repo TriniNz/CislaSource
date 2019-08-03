@@ -101,13 +101,13 @@ var time = Date().split(/ +/g);
         });
     }
 
-        /*if(autoBoleanTabble === true) {
+        if(autoBoleanTabble === true) {
             setTimeout(() => {
                 AutoEditTabble()
             }, 15 * 1000)
         } else {
             AutoEditTabble()
-        }*/
+        }
 
         if(autoBoleanConsole === true ) {
             setInterval(() => {

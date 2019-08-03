@@ -79,9 +79,11 @@ exports.run = async (Discord, client, message, args, db) => {
                         Motivo: `${reason}`,
                         Responsavel: `${message.author.id}`
                     }).write()
-
-                    message.guild.channels.get("602717447933657099").send(Embed_Muted)
-                    userMute.addRole(MuteRole)
+                    setTimeout(() => {
+                        message.guild.channels.get("602717447933657099").send(Embed_Muted)
+                        userMute.addRole(MuteRole)
+                        message.reply("usuario punido com sucesso.").then(msg => msg.delete(15*100))
+                    }, 2*1000)
             }
 
 
