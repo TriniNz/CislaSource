@@ -372,7 +372,7 @@ client.on("message", async message => {
                             .setColor("#6699FF")
                         return message.reply(Embed_NOT_FOUND_ERR).then(msg => msg.delete(15*1000))
                 } else {
-                    console.log(e)
+                    console.log(err)
                         console.log(" ")
                         console.log(`Erro: Há um erro no codigo (${comando}).`)
                         console.log(" ")
