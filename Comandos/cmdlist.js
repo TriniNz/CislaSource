@@ -43,16 +43,16 @@ exports.run = async (Discord, client, message, args, db) => {
             .setFooter("Cisla ©")
             .setTimestamp(new Date())
     message.channel.send(embed).then(async m => { 
-        m.delete(25*1000); message.delete(120*1000)
+        m.delete(25*1000); message.delete(250*1000)
 
     await m.react("⬅")
     await m.react("➡")
 
         const nextp = (reaction, user) => reaction.emoji.name === '➡' && user.id === message.author.id;
-        const collectnext = m.createReactionCollector(nextp, { time: 30*1000 });
+        const collectnext = m.createReactionCollector(nextp, { time: 250*1000 });
 
         const antp = (reaction, user) => reaction.emoji.name === '⬅' && user.id === message.author.id;
-        const collectant = m.createReactionCollector(antp, { time: 30*1000 });
+        const collectant = m.createReactionCollector(antp, { time: 250*1000 });
 
     collectant.on("collect", r => {
             if(comandos[paginaAtual - 1]) {
@@ -62,6 +62,11 @@ exports.run = async (Discord, client, message, args, db) => {
                     .setColor("#6699FF")
                     .setFooter("Cisla ©")
                     .setTimestamp(new Date())
+                await m.clearReactions()
+
+                await m.react("⬅")
+                await m.react("➡")
+
                 m.edit(proxant)
             }
         });
@@ -74,7 +79,12 @@ exports.run = async (Discord, client, message, args, db) => {
                 .setColor("#6699FF")
                 .setFooter("Cisla ©")
                 .setTimestamp(new Date())
-            m.edit(proxpage)
+            await m.clearReactions()
+
+            await m.react("⬅")
+            await m.react("➡")
+
+            await m.edit(proxpage)
         }
     })
     })  
