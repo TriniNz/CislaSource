@@ -322,7 +322,6 @@ client.on("message", async message => {
         if(message.content.indexOf("!") == 0) {
             try {
                 let cmd = comando.replace("!", "")
-                console.log(cmd)
     
                 let cmdinfo = dbcmd.get("Comandos").find({aliases: [cmd]}).value()
                 let comandos = require(`./Comandos/${cmdinfo.name}.js`);
