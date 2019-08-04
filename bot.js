@@ -13,6 +13,7 @@ const id = require('./config.json')
 const Request = require('request')
 const express = require('express');
 const keepalive = require('express-glitch-keepalive');
+const PastebinAPI = require('pastebin-js')
 //npm i --save express express-glitch-keepalive
 
     const app = express();
@@ -314,7 +315,7 @@ client.on("message", async message => {
 
     if(autoBoleanPiadasRuins) {
 
-        Textos = [
+    let Textos = [
             "eae men, por que a aranha é o animal mais carente do mundo?\n \npor que ela é um AracNeedYou",
             "fala ae meu bom, por que pinheiro não se perde na floresta?\n \npor que ele tem uma pinha",
             "opa meu grande, sabe o que um caipira falou pra o outro quando estavam assistindo tv?\n \n- Iai, firme?\n- Não, futebor.",
