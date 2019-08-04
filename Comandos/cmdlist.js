@@ -54,7 +54,7 @@ exports.run = async (Discord, client, message, args, db) => {
         const antp = (reaction, user) => reaction.emoji.name === '⬅' && user.id === message.author.id;
         const collectant = m.createReactionCollector(antp, { time: 250*1000 });
 
-    collectant.on("collect", r => {
+    collectant.on("collect", async r => {
             if(comandos[paginaAtual - 1]) {
                 paginaAtual -= 1
                 let proxant = new Discord.RichEmbed()
@@ -62,16 +62,17 @@ exports.run = async (Discord, client, message, args, db) => {
                     .setColor("#6699FF")
                     .setFooter("Cisla ©")
                     .setTimestamp(new Date())
+                await m.edit(proxant)
                 await m.clearReactions()
 
                 await m.react("⬅")
                 await m.react("➡")
 
-                m.edit(proxant)
+                
             }
         });
 
-    collectnext.on("collect", r => {
+    collectnext.on("collect", async r => {
         if(comandos[paginaAtual + 1]) {
             paginaAtual += 1
             let proxpage = new Discord.RichEmbed()
@@ -79,12 +80,13 @@ exports.run = async (Discord, client, message, args, db) => {
                 .setColor("#6699FF")
                 .setFooter("Cisla ©")
                 .setTimestamp(new Date())
+            await m.edit(proxpage)
             await m.clearReactions()
 
             await m.react("⬅")
             await m.react("➡")
 
-            await m.edit(proxpage)
+            
         }
     })
     })  
