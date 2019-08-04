@@ -172,7 +172,7 @@ client.on("message", async message => {
         });
     
     pastebin
-        .createPasteFromFile("./atabase.json", `Backup - DataBase • ${time[2]} de ${time[1]}, ${time[3]}, ás ${time[4]}`, null, 1, "N")
+        .createPasteFromFile("./DataBase.json", `Backup - DataBase • ${time[2]} de ${time[1]}, ${time[3]}, ás ${time[4]}`, null, 1, "N")
         .then(function (data) {
             let embed = new Discord.RichEmbed()
                 .setDescription(`DataBase copiada com sucesso. Backup foi enviado no seu privado.`)
@@ -350,20 +350,29 @@ client.on("message", async message => {
     }
 
 
-    if(message.channel.id !== "602871021204275223") {
+    if(message.channel.id !== "602871021204275223") {//Verifica o canal da mensagem, se for o de musica retorna.
 
-        if(message.content.indexOf("!") == 0) {
-            try {
-                let cmd = comando.replace("!", "")
+        if(message.content.indexOf("!") == 0) { //Verifica se o inicio da mensagem contem o prefixo.
+            try {//Inicio de verificação de erro
+                let cmd = comando.replace("!", "")//Remove o prefixo do comando
                 
-                if(cmd === "encrbot") return;
+                if(cmd === "encrbot") return;//Retorna este comando em especifico
+                
+                let cmdfind = dbcmd.get("Comandos").find({aliases: [cmd]}).value()//Procura pelo comando na lista de aliases
 
-                let cmdinfo = dbcmd.get("Comandos").find({aliases: [cmd]}).value()
-                let comandos = require(`./Comandos/${cmdinfo.name}.js`);
+                if(cmdfind.manutencao === true) {//Se o comando estiver em manutenção vai executar o arquivo avisando isso.
+                    let cmdmanu = require(`./Comandos/-manutenção.js`)
+                    return cmdmanu.run(Discord, client, message, args, db)
+
+                } else {// Se não estiver executa o comando normalmente
+
+                    let comandos = require(`./Comandos/${cmdfind.name}.js`);
+        
+                    comandos.run(Discord, client, message, args, db)
+                
+                }
     
-                comandos.run(Discord, client, message, args, db)
-    
-                } catch(err) {
+                } catch(err) {//caso haja erro executara isso →
                     if(err.message === "Cannot read property 'name' of undefined") {
                         let Embed_NOT_FOUND_ERR = new Discord.RichEmbed()
                             .setDescription("Não foi possivel encontrar este comando... Mas você pode encontrar todos meus comandos digitando `!cmdlist`.")

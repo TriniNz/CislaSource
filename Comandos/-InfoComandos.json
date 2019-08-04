@@ -1,10 +1,23 @@
 {
     
 "Comandos":[
-  
+    {
+      "name": "ip",
+      "descricao":"Mostra as informações do servidor.",
+      "manutencao": false,
+      "aliases": [
+        "ip",
+        "svinfo",
+        "server",
+        "servidor",
+        "ips"
+      ]
+    },
+
     {
       "name": "soubeta",
       "descricao": "Dará a tag BETA para os primeiros membros do Discord. - Valido ate 09/08",
+      "manutencao": false,
       "aliases": [
         "soubeta",
         "setbeta",
@@ -15,6 +28,7 @@
     {
       "name": "accform",
       "descricao": "Aceita o formulario do usuario.",
+      "manutencao": false,
       "aliases": [
         "accform",
         "aceitarformulario",
@@ -26,6 +40,7 @@
     {
       "name": "aplicar-se",
       "descricao": "Formulario para aplicação de ajudantes e GCs.",
+      "manutencao": true,
       "aliases": [
         "aplicar-se",
         "aplicar",
@@ -37,6 +52,7 @@
     {
       "name": "ban",
       "descricao": "Expulsa um usuario do servidor e o impede de entrar ate que seja despunido.",
+      "manutencao": false,
       "aliases": [
         "ban",
         "banir",
@@ -47,6 +63,7 @@
     {
       "name": "clan",
       "descricao": "Opções para criar, excluir, e adicionar membros em seu clan.",
+      "manutencao": false,
       "aliases": [
         "clan",
         "clã"
@@ -56,6 +73,7 @@
     {
       "name": "clear",
       "descricao": "Apaga determinado numero de mensagens.",
+      "manutencao": false,
       "aliases": [
         "clear",
         "limpar",
@@ -66,6 +84,7 @@
     {
       "name": "clearchannel",
       "descricao": "Apaga todas as mensagens de um canal.",
+      "manutencao": false,
       "aliases": [
         "clearchannel",
         "limparcanal"
@@ -75,6 +94,7 @@
     {
       "name": "cmdlist",
       "descricao": "Mostra a lista de comandos e o que cada um deles faz.",
+      "manutencao": false,
       "aliases": [
         "cmdlist",
         "comandos",
@@ -85,6 +105,7 @@
     {
       "name": "delform",
       "descricao": "Deleta o formulario de determinado membro",
+      "manutencao": false,
       "aliases": [
         "delform",
         "deletarform",
@@ -96,6 +117,7 @@
     {
       "name": "encbot",
       "descricao": "Cria um backup da database atual.",
+      "manutencao": false,
       "aliases": [
         "encbot",
         "encerrarbot",
@@ -106,6 +128,7 @@
     {
       "name": "feedback",
       "descricao": "Envia seu feedback para o desenvolvedor.",
+      "manutencao": false,
       "aliases": [
         "feedback"
       ]
@@ -114,6 +137,7 @@
     {
       "name": "gay",
       "descricao": "Mostra quantos por cento o usuario é gay.",
+      "manutencao": false,
       "aliases": [
         "gay"
       ]
@@ -122,6 +146,7 @@
     {
       "name": "kick",
       "descricao": "Expulsa um determinado usuario.",
+      "manutencao": false,
       "aliases": [
         "kick",
         "expulsar",
@@ -132,6 +157,7 @@
     {
       "name": "mute",
       "descricao": "Sliencia um determinado membro, impedindo o mesmo de falar e conectar nos canais",
+      "manutencao": false,
       "aliases": [
         "mute",
         "mutar",
@@ -143,6 +169,7 @@
     {
       "name": "shop",
       "descricao": "Loja para gastar teus coins.",
+      "manutencao": false,
       "aliases": [
         "shop",
         "loja",
@@ -153,6 +180,7 @@
     {
       "name": "source",
       "descricao": "Envia o link do meu repositorio no GitHub.",
+      "manutencao": false,
       "aliases": [
         "source",
         "codigo",
@@ -163,6 +191,7 @@
     {
       "name": "statistic",
       "descricao": "Mostra as estatiscas atuais do servidor.",
+      "manutencao": false,
       "aliases": [
         "statistic",
         "estatisticas",
@@ -173,6 +202,7 @@
     {
       "name": "ticket",
       "descricao": "Cria um canal de suporte para o usuario.",
+      "manutencao": false,
       "aliases": [
         "ticket",
         "suporte",
@@ -183,6 +213,7 @@
     {
       "name": "toplevel",
       "descricao": "Mostra o top 12 que mais falaram no servidor.",
+      "manutencao": false,
       "aliases": [
         "toplevel",
         "leveltop",
@@ -195,6 +226,7 @@
     {
       "name": "verlevel",
       "descricao": "Mostra o level do usuario marcado, caso não haja, mostra teu level.",
+      "manutencao": false,
       "aliases": [
         "verlevel",
         "profile",
