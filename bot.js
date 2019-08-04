@@ -105,7 +105,7 @@ var time = Date().split(/ +/g);
     }
 
         if(autoBoleanTabble === true) {
-            setTimeout(() => {
+            setInterval(() => {
                 AutoEditTabble()
             }, 15 * 1000)
         } else {
@@ -127,24 +127,6 @@ var time = Date().split(/ +/g);
         } else {
             AutoStatusEdit()
         }
-
-    setInterval(() => {
-        uptime_s += 1
-        if(uptime_s >= 60) {
-            uptime_m += 1;
-            uptime_s = 0
-        }
-        if(uptime_m >= 60) {
-            uptime_h += 1
-            uptime_m = 0
-        }
-        if(uptime_h >= 24) {
-            uptime_d += 1
-            uptime_h = 0
-            uptime_m = 0
-            uptime_s = 0
-        }
-    }, 1000);
 
 });
 
@@ -283,7 +265,7 @@ client.on("message", async message => {
                 } 
             }
         } catch(err) {
-            if(err.name === "TypeError") {
+            if(err.message === "Cannot read property 'Id' of undefined") {
                 db.get("RankSystem").push({
                     Usuario: `${message.author.username}`,
                     Id: `${message.author.id}`,

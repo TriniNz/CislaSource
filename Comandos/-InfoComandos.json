@@ -1,7 +1,16 @@
 {
     
 "Comandos":[
-    
+  
+    {
+      "name": "soubeta",
+      "descricao": "Dará a tag BETA para os primeiros membros do Discord. - Valido ate 09/08",
+      "aliases": [
+        "soubeta",
+        "setbeta",
+        "beta"
+      ]
+    },
 
     {
       "name": "accform",

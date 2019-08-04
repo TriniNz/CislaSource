@@ -5,23 +5,10 @@
       "prefix": "!"
     }
   ],
-  "Clans": [
-    {
-      "Name": "xvideos",
-      "Owner": "357192105845587969",
-      "CreatedDate": "28 de Jul, 2019, ás 06:17:54",
-      "ChannelID": "604920465135370259",
-      "RoleID": "604920459175133214",
-      "MembersCount": 2,
-      "Members": [
-        "Owner: AbsolutZ",
-        "508277160981692420@HectrorEzz",
-        "465006917438275587@</ H4CK€D_»"
-      ]
-    }
-  ],
+  "Clans": [],
   "Mutes": [],
   "Bans": [],
   "Kicks": [],
-  "RankSystem": []
+  "RankSystem": [
+  ]
 }
