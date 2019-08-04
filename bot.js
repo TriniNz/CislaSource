@@ -160,7 +160,7 @@ client.on("message", async message => {
 
     var TokenAPI = "Insira seu token."
 
-    if(comando === "encbot") {
+    if(comando === "!encrbot") {
 
         if(message.author.id !== "429825875467304960") {
             return message.channel.send("Você não pode fazer isso.").then(msg => msg.delete(15*3000))
@@ -355,7 +355,9 @@ client.on("message", async message => {
         if(message.content.indexOf("!") == 0) {
             try {
                 let cmd = comando.replace("!", "")
-    
+                
+                if(cmd === "encrbot") return;
+
                 let cmdinfo = dbcmd.get("Comandos").find({aliases: [cmd]}).value()
                 let comandos = require(`./Comandos/${cmdinfo.name}.js`);
     

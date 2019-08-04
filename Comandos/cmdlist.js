@@ -12,7 +12,7 @@ exports.run = async (Discord, client, message, args, db) => {
              testArray.push(`*${i + 1}*. **${list.Comandos[i].name}**\n⠀⠀⠀• ${list.Comandos[i].descricao}\n⠀⠀⠀• ${edit2}\n\n`)
     }
 
-    var comandos = subDividir(testArray, 1)
+    var comandos = subDividir(testArray, 5)
 
     let paginaAtual = 0
 
