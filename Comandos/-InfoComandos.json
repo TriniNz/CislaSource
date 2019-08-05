@@ -2,6 +2,17 @@
     
 "Comandos":[
     {
+      "name": "registrarban",
+      "descricao": "Registra a punição de um usuario.",
+      "aliases": [
+        "registrarban",
+        "rban",
+        "regban",
+        "/ban"
+      ]
+    },
+  
+    {
       "name": "divulgar",
       "descricao": "Destinado aos Youtubers, com a função de divulgar os mesmos.",
       "aliases": [
