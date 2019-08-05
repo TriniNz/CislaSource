@@ -2,6 +2,13 @@
     
 "Comandos":[
     {
+      "name": "divulgar",
+      "descricao": "Destinado aos Youtubers, com a função de divulgar os mesmos.",
+      "aliases": [
+        "divulgar"
+      ]
+    },
+    {
       "name": "ip",
       "descricao":"Mostra as informações do servidor.",
       "manutencao": false,
