@@ -5,31 +5,10 @@
       "prefix": "!"
     }
   ],
+  "Formularios": [],
   "Clans": [],
   "Mutes": [],
   "Bans": [],
   "Kicks": [],
-  "RankSystem": [
-    {
-      "Usuario": "TriniNz",
-      "Id": "429825875467304960",
-      "XPcount": 0,
-      "Level": 1,
-      "Coins": 0
-    },
-    {
-      "Usuario": "Isoladoo",
-      "Id": "318217601442512906",
-      "XPcount": 40,
-      "Level": 1,
-      "Coins": 0
-    },
-    {
-      "Usuario": "zPuckles",
-      "Id": "601936988609839105",
-      "XPcount": 3,
-      "Level": 1,
-      "Coins": 0
-    }
-  ]
+  "RankSystem": []
 }

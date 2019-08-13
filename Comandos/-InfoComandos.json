@@ -44,21 +44,9 @@
     },
 
     {
-      "name": "accform",
-      "descricao": "Aceita o formulario do usuario.",
-      "manutencao": false,
-      "aliases": [
-        "accform",
-        "aceitarformulario",
-        "acceptform",
-        "formacc"
-      ]
-    },
-
-    {
       "name": "aplicar-se",
       "descricao": "Formulario para aplicação de ajudantes e GCs.",
-      "manutencao": true,
+      "manutencao": false,
       "aliases": [
         "aplicar-se",
         "aplicar",
@@ -117,18 +105,6 @@
         "cmdlist",
         "comandos",
         "lista"
-      ]
-    },
-
-    {
-      "name": "delform",
-      "descricao": "Deleta o formulario de determinado membro",
-      "manutencao": false,
-      "aliases": [
-        "delform",
-        "deletarform",
-        "removerform",
-        "formdel"
       ]
     },
    

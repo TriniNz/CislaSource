@@ -398,4 +398,83 @@ client.on("message", async message => {
     }
 });
 
+client.on('raw', async raw => {
+    
+    if(raw.t === "MESSAGE_REACTION_ADD") {
+        if(raw.d.channel_id === "602901921841414164" || raw.d.channel_id === "603685392943808513") {
+            if(raw.d.emoji.name === '✅') {
+                if(!client.users.get(raw.d.user_id).bot) { 
+                    let valor = db.get("Formularios").find({MessageID: `${raw.d.message_id}`}).value()                   
+                    if(valor.Formtype === "Ajudante") {
+                        let role = await client.guilds.get("602679739777417256").roles.find(r => r.name === "Ajudante")
+                        client.guilds.get("602679739777417256").members.get(valor.Id).addRole(role)
+
+                        let e1 = new Discord.RichEmbed()
+                            .setDescription(`Olá <@${valor.Id}>, seu formulario na Rede Cisla foi aceito! Sua tag no servidor já foi setada, aguarde para que seja setada no servidor. `)
+                            .setColor("#6699FF")
+                            .setFooter(`Aceito por ${client.users.get(raw.d.user_id).username}, atenciosamente equipe Cisla ©`)
+                            .setTimestamp(new Date())
+                        client.users.get(valor.Id).send(e1)
+
+                        let e3 = new Discord.RichEmbed()
+                            .setDescription(`${Usuario}, foi adicionado a equipe como <@&602708046665220116>`)
+                            .setColor("#6699FF")
+                            .setFooter(`Adicionado por ${client.users.get(raw.d.user_id).username}, atenciosamente equipe Cisla ©`)
+                            .setTimestamp(new Date())
+                        client.guilds.get("602679739777417256").channels.get("602714968948998144").send(e3)
+
+                        client.guilds.get("602679739777417256").channels.get("602901921841414164").fetchMessage(valor.MessageID)
+                        .then(msg => msg.delete())
+
+                    } else 
+
+                    if(valor.Formtype === "GC-MOD") {
+
+                        let role = await client.guilds.get("602679739777417256").roles.find(r => r.name === "GC")
+                        client.guilds.get("602679739777417256").members.get(valor.Id).addRole(role)
+
+                        let e1 = new Discord.RichEmbed()
+                            .setDescription(`Olá <@${valor.Id}>, seu formulario na Rede Cisla foi aceito! Sua tag no servidor já foi setada, aguarde para que seja setada no servidor. `)
+                            .setColor("#6699FF")
+                            .setFooter(`Aceito por ${client.users.get(raw.d.user_id).username}, atenciosamente equipe Cisla ©`)
+                            .setTimestamp(new Date())
+                        client.users.get(valor.Id).send(e1)
+
+                        let e3 = new Discord.RichEmbed()
+                            .setDescription(`${Usuario}, foi adicionado a equipe como <@&603703431533821962>`)
+                            .setColor("#6699FF")
+                            .setFooter(`Adicionado por ${client.users.get(raw.d.user_id).username}, atenciosamente equipe Cisla ©`)
+                            .setTimestamp(new Date())
+                        client.guilds.get("602679739777417256").channels.get("602714968948998144").send(e3)
+
+                        client.guilds.get("602679739777417256").channels.get("603685392943808513").fetchMessage(valor.MessageID)
+                            .then(msg => msg.delete())
+                    }
+                }
+            } else 
+            if(raw.d.emoji.name === '❎') {
+                if(!client.users.get(raw.d.user_id).bot) {
+                    let valor = db.get("Formularios").find({MessageID: `${raw.d.message_id}`}).value()
+                    let e1 = new Discord.RichEmbed()
+                        .setDescription(`Olá <@${valor.Id}>, seu formulario na Rede Cisla foi negado. `)
+                        .setColor("#6699FF")
+                        .setFooter(`Negado por ${client.users.get(raw.d.user_id).username}, atenciosamente equipe Cisla ©`)
+                        .setTimestamp(new Date())
+                    client.users.get(valor.Id).send(e1)
+
+                    client.guilds.get("602679739777417256").channels.get("602901921841414164").fetchMessage(valor.MessageID)
+                    .then(msg => msg.delete()).catch(err => {
+                        if(err.name === "DiscordAPIError" && err.message === "Unknown Message") {
+                            client.guilds.get("602679739777417256").channels.get("603685392943808513").fetchMessage(valor.MessageID)
+                            .then(msg => msg.delete())
+                        }
+                    })
+
+                    db.get("Formularios").remove({MessageID: `${raw.d.message_id}`}).write()
+                }
+            }
+        }
+    }
+})
+
 client.login(id.token)

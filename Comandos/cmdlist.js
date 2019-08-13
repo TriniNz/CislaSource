@@ -63,10 +63,7 @@ exports.run = async (Discord, client, message, args, db) => {
                     .setFooter("Cisla ©")
                     .setTimestamp(new Date())
                 await m.edit(proxant)
-                await m.clearReactions()
-
-                await m.react("⬅")
-                await m.react("➡")
+                r.remove(message.author)
 
                 
             }
@@ -81,10 +78,7 @@ exports.run = async (Discord, client, message, args, db) => {
                 .setFooter("Cisla ©")
                 .setTimestamp(new Date())
             await m.edit(proxpage)
-            await m.clearReactions()
-
-            await m.react("⬅")
-            await m.react("➡")
+            r.remove(message.author)
 
             
         }
