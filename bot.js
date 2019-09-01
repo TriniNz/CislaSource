@@ -270,6 +270,46 @@ client.on("message", async message => {
                 let newxp = antigXP += getXP
 
                 db.get("RankSystem").find({Id: message.author.id}).assign({XPcount: newxp}).write()
+                
+                function transformNumber(number = `${newxp}`) {
+                    let numberCerto = "0"
+                
+                if(number.length < 4) {
+                    return numberCerto = number
+                }
+                if(number.length >= 4) {
+                 let cortNumber = number.split('')
+                 return numberCerto = cortNumber[0] + "K"
+                }
+                if(number.length >= 5) {
+                 let cortNumber = number.split('')
+                 return numberCerto = cortNumber[0] + cortNumber[1] + "K"
+                }
+                if(number.length >= 6) {
+                 let cortNumber = number.split('')
+                 return numberCerto = cortNumber[0] + cortNumber[1] + cortNumber[2] + "K"
+                }
+                if(number.length >= 7) {
+                 let cortNumber = number.split('')
+                 return numberCerto = cortNumber[0] + "M"
+                }
+                if(number.length >= 8) {
+                 let cortNumber = number.split('')
+                 return numberCerto = cortNumber[0] + cortNumber[1] +"M"
+                }
+                if(number.length >= 9) {
+                 let cortNumber = number.split('')
+                 return numberCerto = cortNumber[0] + cortNumber[1] + cortNumber[8] + "M"
+                }
+                if(number.length >= 10) {
+                 let cortNumber = number.split('')
+                 return numberCerto = cortNumber[0] + "B"
+                }
+                
+                return numberCerto
+                }
+            
+                db.get("RankSystem").find({Id: message.author.id}).assign({XPDisplaycount: transformNumber()}).write()
 
                 let proxLevel = valor.Level * 550
 
@@ -279,12 +319,12 @@ client.on("message", async message => {
 
                     db.get("RankSystem").find({Id: message.author.id}).assign({Level: newLevel}).write()
 
-                    let coinsPredefine = [5,8,10,14,17,20]
+                    let coinsPredefine = [5,8,10,14,17,20,20,25,30,50,100,150]
                     let random2 = Math.floor(Math.random()* coinsPredefine.length)
 
 
                     let embed = new Discord.RichEmbed()
-                        .setDescription(`:tada: ${message.author}, parabéns, Você upou de level!\n\n• *Level atual* ${valor.Level}\n• *XP* ${valor.XPcount}/${valor.Level * 500}\n\n Você ganhou ${coinsPredefine[random2]} coins como recompensa!`)
+                        .setDescription(`:tada: ${message.author}, parabéns, Você upou de level!\n\n• *Level atual* ${valor.Level}\n• *XP* ${valor.XPDisplaycount}\n\n Você ganhou ${coinsPredefine[random2]} coins como recompensa!`)
                         .setThumbnail(message.author.displayAvatarURL)
                         .setColor("#6699FF")
                         .setFooter("Cisla ©")
@@ -373,7 +413,7 @@ client.on("message", async message => {
                 }
     
                 } catch(err) {//caso haja erro executara isso →
-                    if(err.message === "Cannot read property 'name' of undefined") {
+                    if(err.message === "Cannot read property 'manutencao' of undefined") {
                         let Embed_NOT_FOUND_ERR = new Discord.RichEmbed()
                             .setDescription("Não foi possivel encontrar este comando... Mas você pode encontrar todos meus comandos digitando `!cmdlist`.")
                             .setFooter("Erro: Comando não encontrado.")

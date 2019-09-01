@@ -2,8 +2,22 @@
     
 "Comandos":[
     {
+      "name":"renamech",
+      "descricao":"Renomeia e adiciona espaços aos canais.",
+      "manutencao": false,
+      "aliases": [
+        "renamech",
+        "renomearchat",
+        "rech",
+        "rename",
+        "channelname",
+        "spacename"
+      ]
+    }, 
+    {
       "name": "registrarban",
       "descricao": "Registra a punição de um usuario.",
+      "manutencao": false,
       "aliases": [
         "registrarban",
         "rban",
@@ -15,6 +29,7 @@
     {
       "name": "divulgar",
       "descricao": "Destinado aos Youtubers, com a função de divulgar os mesmos.",
+      "manutencao": false,
       "aliases": [
         "divulgar"
       ]
@@ -46,7 +61,7 @@
     {
       "name": "aplicar-se",
       "descricao": "Formulario para aplicação de ajudantes e GCs.",
-      "manutencao": false,
+      "manutencao": true,
       "aliases": [
         "aplicar-se",
         "aplicar",
@@ -69,7 +84,7 @@
     {
       "name": "clan",
       "descricao": "Opções para criar, excluir, e adicionar membros em seu clan.",
-      "manutencao": false,
+      "manutencao": true,
       "aliases": [
         "clan",
         "clã"
