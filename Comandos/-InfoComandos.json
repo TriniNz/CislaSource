@@ -2,6 +2,17 @@
     
 "Comandos":[
     {
+      "name":"eventos",
+      "descricao":"Inicia eventos.",
+      "manutencao": false,
+      "aliases": [
+        "eventos",
+        "events",
+        "evento"
+      ]
+
+    },
+    {
       "name":"renamech",
       "descricao":"Renomeia e adiciona espaços aos canais.",
       "manutencao": false,
@@ -61,7 +72,7 @@
     {
       "name": "aplicar-se",
       "descricao": "Formulario para aplicação de ajudantes e GCs.",
-      "manutencao": true,
+      "manutencao": false,
       "aliases": [
         "aplicar-se",
         "aplicar",

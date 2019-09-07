@@ -1,6 +1,14 @@
 exports.run = async (Discord, client, message, args, db) => {
 
-    var time = Date().split(/ +/g);
+    message.channel.send(new Discord.RichEmbed()
+        .setAuthor("Formularios!")
+        .setDescription("Nosso formulario atualizado é [este](https://docs.google.com/forms/d/e/1FAIpQLSewdIkGk_O6TG4yqkgVkIWlglUoODm9cxv1aWeodsyWQFJr4Q/viewform).")
+        .setFooter("Cisla ©")
+        .setTimestamp(new Date())
+        .setColor("#6699FF")
+    ).then(msg => {msg.delete(15*1000); message.delete(15*1000)})
+}
+    /*var time = Date().split(/ +/g);
 
     let hpergunta1 = "Qual o seu nome?"
     let hpergunta2 = "Qual seu username in-game?"
@@ -1253,5 +1261,4 @@ exports.run = async (Discord, client, message, args, db) => {
             });
             });
         });
-    })
-}
+    })*/

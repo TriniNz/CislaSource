@@ -158,6 +158,12 @@ client.on("message", async message => {
     const args = message.content.slice(db.get("Guild").find({id: "602679739777417256"}).value().prefix).trim().split(/ +/g);
     const comando = args.shift().toLowerCase();
 
+    if(message.content.indexOf(">")== 0) {
+        if(message.channel.id != "602687787141038103") return message.reply("você não está em um canal de sugestões.").then(msg => msg.delete(5*1000))
+        message.react("✅")
+        message.react("❎")
+    }
+
     var TokenAPI = "Insira seu token."
 
     if(comando === "!encrbot") {
@@ -319,7 +325,7 @@ client.on("message", async message => {
 
                     db.get("RankSystem").find({Id: message.author.id}).assign({Level: newLevel}).write()
 
-                    let coinsPredefine = [5,8,10,14,17,20,20,25,30,50,100,150]
+                    let coinsPredefine = [5,8,10,14,17,20,20,25,30,50,100,150,200,500,600,700,800,900,1000,2000,5000]
                     let random2 = Math.floor(Math.random()* coinsPredefine.length)
 
 
